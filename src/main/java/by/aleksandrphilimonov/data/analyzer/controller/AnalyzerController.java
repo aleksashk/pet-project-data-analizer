@@ -1,7 +1,7 @@
 package by.aleksandrphilimonov.data.analyzer.controller;
 
-import by.aleksandrphilimonov.data.analyzer.json.DataRequest;
-import by.aleksandrphilimonov.data.analyzer.json.DataResponse;
+import by.aleksandrphilimonov.data.analyzer.api.DataRequest;
+import by.aleksandrphilimonov.data.analyzer.api.DataResponse;
 import by.aleksandrphilimonov.data.analyzer.service.AnalyzerService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
