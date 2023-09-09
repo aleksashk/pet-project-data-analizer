@@ -4,7 +4,6 @@ import by.aleksandrphilimonov.data.analyzer.api.DataRequest;
 import by.aleksandrphilimonov.data.analyzer.api.DataResponse;
 import by.aleksandrphilimonov.data.analyzer.service.AnalyzerService;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +12,6 @@ import javax.validation.Valid;
 
 @RestController
 @Data
-@RequiredArgsConstructor
 public class AnalyzerController {
     private final String COUNT_OF_WORDS = "5";
 
