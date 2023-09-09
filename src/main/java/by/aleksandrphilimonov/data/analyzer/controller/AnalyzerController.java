@@ -5,7 +5,6 @@ import by.aleksandrphilimonov.data.analyzer.api.DataResponse;
 import by.aleksandrphilimonov.data.analyzer.service.AnalyzerService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +15,7 @@ import javax.validation.Valid;
 @Data
 @RequiredArgsConstructor
 public class AnalyzerController {
-    @Value("${countOfWords}")
-    private String countOfWords;
+    private final String COUNT_OF_WORDS = "5";
 
     private final AnalyzerService analyzerService;
 
@@ -27,7 +25,7 @@ public class AnalyzerController {
 
         DataResponse dataResponse = new DataResponse();
         dataResponse.setWordsCount(analyzerService.getNumberOfWords(request.getText()));
-        dataResponse.setMostFrequentWords(analyzerService.getWordsArray(request.getText(), Integer.parseInt(countOfWords)));
+        dataResponse.setMostFrequentWords(analyzerService.getWordsArray(request.getText(), Integer.parseInt(COUNT_OF_WORDS)));
 
         return dataResponse;
     }
