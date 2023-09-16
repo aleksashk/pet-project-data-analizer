@@ -13,6 +13,9 @@ import java.util.stream.Collectors;
 public class AnalyzerService {
 
     private static final Integer COUNT_OF_WORDS = 5;
+    public static final String NOT_WORD = "[^a-zA-Zа-яА-Я]+";
+    public static final String SPACE = " ";
+    public static final String EMPTY_STRING = "";
 
     public DataResponse getResponse(DataRequest request) {
         List<String> wordsList = getWordsList(request.getText());
@@ -25,8 +28,8 @@ public class AnalyzerService {
     }
 
     private List<String> getWordsList(String text) {
-        return Arrays.stream(text.split(" "))
-                .map(s -> s.replaceAll("[^a-zA-Zа-яА-Я]+", ""))
+        return Arrays.stream(text.split(SPACE))
+                .map(s -> s.replaceAll(NOT_WORD, EMPTY_STRING))
                 .filter(s -> s.length() > 0)
                 .collect(Collectors.toList());
     }
@@ -55,7 +58,8 @@ public class AnalyzerService {
     }
 
     private void wordStatIncreaseCounter(List<WordStat> wordStatList, String word) {
-        if (wordStatList.stream().noneMatch(i -> i.getText().equals(word))) {
+        if (wordStatList.stream()
+                .noneMatch(i -> i.getText().equals(word))) {
             wordStatList.add(new WordStat(word, 1));
         } else {
             wordStatList.stream()
