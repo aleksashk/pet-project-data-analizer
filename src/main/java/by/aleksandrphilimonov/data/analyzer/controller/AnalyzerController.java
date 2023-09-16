@@ -13,8 +13,6 @@ import javax.validation.Valid;
 @RestController
 @Data
 public class AnalyzerController {
-
-    private static final String COUNT_OF_WORDS = "5";
     private final AnalyzerService analyzerService;
 
     @PostMapping("/api/wordstat")
