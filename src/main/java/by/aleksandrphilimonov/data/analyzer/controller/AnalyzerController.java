@@ -13,19 +13,14 @@ import javax.validation.Valid;
 @RestController
 @Data
 public class AnalyzerController {
-    private final String COUNT_OF_WORDS = "5";
 
+    private static final String COUNT_OF_WORDS = "5";
     private final AnalyzerService analyzerService;
-
 
     @PostMapping("/api/wordstat")
     public DataResponse analyze(@Valid @RequestBody DataRequest request) {
 
-        DataResponse dataResponse = new DataResponse();
-        dataResponse.setWordsCount(analyzerService.getNumberOfWords(request.getText()));
-        dataResponse.setMostFrequentWords(analyzerService.getWordsArray(request.getText(), Integer.parseInt(COUNT_OF_WORDS)));
-
-        return dataResponse;
+        return analyzerService.getResponse(request);
     }
 
 }

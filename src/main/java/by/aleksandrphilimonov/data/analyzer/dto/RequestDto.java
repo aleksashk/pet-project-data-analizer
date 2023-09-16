@@ -1,4 +1,4 @@
-package by.aleksandrphilimonov.data.analyzer.api;
+package by.aleksandrphilimonov.data.analyzer.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DataRequest {
+public class RequestDto {
     @NotNull
     private String text;
 }
