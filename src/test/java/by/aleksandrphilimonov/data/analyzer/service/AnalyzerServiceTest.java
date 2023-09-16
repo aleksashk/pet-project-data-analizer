@@ -2,9 +2,6 @@ package by.aleksandrphilimonov.data.analyzer.service;
 
 import by.aleksandrphilimonov.data.analyzer.api.DataRequest;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class AnalyzerServiceTest {
 
@@ -14,7 +11,7 @@ class AnalyzerServiceTest {
     static DataRequest request;
 
     @BeforeAll
-    static void setUp(){
+    static void setUp() {
         service = new AnalyzerService();
         text = "Привет! Hello!";
         request = new DataRequest(text);

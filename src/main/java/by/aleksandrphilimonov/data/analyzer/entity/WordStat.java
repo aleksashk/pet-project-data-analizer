@@ -23,8 +23,6 @@ public class WordStat {
     }
 
     public String[] getWordsArray() {
-        List<String> stringList = cleanString();
-
         Map<String, Integer> sortedMap = getStringIntegerSortedMap();
 
         return sortedMap.keySet().stream().limit(COUNT_OF_WORDS).toArray(String[]::new);
