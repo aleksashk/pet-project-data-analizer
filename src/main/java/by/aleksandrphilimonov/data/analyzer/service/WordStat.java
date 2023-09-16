@@ -1,4 +1,4 @@
-package by.aleksandrphilimonov.data.analyzer.entity;
+package by.aleksandrphilimonov.data.analyzer.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

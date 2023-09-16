@@ -2,7 +2,6 @@ package by.aleksandrphilimonov.data.analyzer.service;
 
 import by.aleksandrphilimonov.data.analyzer.api.DataRequest;
 import by.aleksandrphilimonov.data.analyzer.api.DataResponse;
-import by.aleksandrphilimonov.data.analyzer.entity.WordStat;
 import org.springframework.stereotype.Service;
 
 @Service
