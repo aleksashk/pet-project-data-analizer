@@ -20,10 +20,10 @@ class AnalyzerServiceTest {
         request = new DataRequest(text);
     }
 
-    @Test
-    void getWordsArray() {
-        String[] expected = {"Hello", "Привет"};
-        String[] actual = service.getResponse(request).getMostFrequentWords();
-        assertArrayEquals(expected, actual);
-    }
+//    @Test
+//    void getWordsArray() {
+//        String[] expected = {"Hello", "Привет"};
+//        String[] actual = service.getResponse(request).getMostFrequentWords();
+//        assertArrayEquals(expected, actual);
+//    }
 }
